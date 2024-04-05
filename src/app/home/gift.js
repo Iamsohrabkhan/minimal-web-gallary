@@ -1,7 +1,7 @@
 "use client";
 import { useAppAnimation } from "@/components/animations/useAnimationContext";
-import { useMotionValueEvent } from "framer-motion";
-import { useScroll, useTransform, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { useMotionValueEvent ,useScroll,useTransform} from "framer-motion";
 
 import Image from "next/image";
 import { useRef } from "react";
@@ -9,8 +9,13 @@ import { twMerge } from "tailwind-merge";
 
 const Gift = () => {
   const featuresRef = useRef(null);
-  const { backgroundColor, color, navBackgroundColor, navColor } =
-    useAppAnimation();
+  const {
+    backgroundColor,
+    color,
+    navBackgroundColor,
+    navColor,
+    setContactActive,
+  } = useAppAnimation();
 
   const { scrollYProgress } = useScroll({
     target: featuresRef,
@@ -45,6 +50,11 @@ const Gift = () => {
     scrollYProgress,
     [0.2, 0.8],
     ["50%", "20%"]
+  );
+  const pic4TranslateRight = useTransform(
+    scrollYProgress,
+    [0.2, 0.8],
+    ["50%", "80%"]
   );
   const pic5TranslateTop = useTransform(
     scrollYProgress,
@@ -97,7 +107,7 @@ const Gift = () => {
   });
   return (
     <section ref={featuresRef} className="h-[300svh] w-full">
-      <motion.div className=" sticky h-svh top-0 w-full left-0 ">
+      <motion.div className=" sticky h-svh top-0 w-full left-0 py-2">
         <motion.div
           className="text-center space-y-3 lg:p-3 -translate-y-1/2    "
           style={{
@@ -117,12 +127,21 @@ const Gift = () => {
             Find out what distinguishes our services from the rest, promising a
             superior experience and results.
           </p>
+          {/* <HeroCtAButton/> */}
+          <motion.button
+            onClick={() => {
+              setContactActive(true);
+            }}
+            style={{ color: backgroundColor, backgroundColor: color }}
+            className=" p-3 rounded-md"
+          >
+            Contact Us
+          </motion.button>
         </motion.div>
 
         <div className="relative  h-svh  ">
           <Picture
-            src="/screenshots/gf2.jpg"
-            fill
+            src="/screenshots/gf1.jpg"
             alt=""
             initial={{
               top: "50%",
@@ -137,7 +156,6 @@ const Gift = () => {
           />
           <Picture
             src="/screenshots/gf2.jpg"
-            fill
             alt="1"
             style={{ top: pic1TranslateTop, left: pic1TranslateLeft }}
             initial={{
@@ -148,7 +166,6 @@ const Gift = () => {
 
           <Picture
             src="/screenshots/gf4.jpg"
-            fill
             alt="3"
             initial={{
               top: "50%",
@@ -163,7 +180,6 @@ const Gift = () => {
           />
           <Picture
             src="/screenshots/gf4.jpg"
-            fill
             alt=""
             initial={{
               top: "50%",
@@ -173,6 +189,7 @@ const Gift = () => {
             }}
             style={{
               top: pic4TranslateTop,
+              right: pic4TranslateRight,
             }}
           />
         </div>
@@ -190,19 +207,14 @@ const Picture = ({ src, alt, initial, style, className = "" }) => {
       style={style}
       className="absolute -translate-x-1/2 -translate-y-1/2"
     >
-      {/* <div className="relative w-32 h-44  md:w-36 md:h-52 lg:w-72 lg:h-52"> */}
-        {" "}
-        <Image
-          src={src}
-          // fill
-          width={200}
-          height={200}
-          alt={alt}
-          className={twMerge(
-            "object-cover object-center rounded-md",
-            className
-          )}
-        />
+      {/* <div className="relative w-32 h-44  md:w-36 md:h-52 lg:w-72 lg:h-52"> */}{" "}
+      <Image
+        src={src}
+        width={120}
+        height={120}
+        alt={alt}
+        className={twMerge("object-cover object-center rounded-md", className)}
+      />
       {/* </div> */}
     </motion.div>
   );

@@ -1,6 +1,6 @@
 "use client";
 import { useMotionValue } from "framer-motion";
-import React, { createContext, useContext,useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 // Step 2: Create a context with a default value
 const MyContext = createContext();
@@ -14,12 +14,18 @@ export const ContextProvider = ({ children }) => {
   const navBackgroundColor = useMotionValue("#fff");
   const navColor = useMotionValue("#000");
   const [contactActive, setContactActive] = useState(false);
+  const [marqueStart, setMarqueStart] = useState(false);
 
- 
-
-  
-
-  const value = { backgroundColor, color,navBackgroundColor,navColor ,contactActive, setContactActive};
+  const value = {
+    backgroundColor,
+    marqueStart,
+    setMarqueStart,
+    color,
+    navBackgroundColor,
+    navColor,
+    contactActive,
+    setContactActive,
+  };
 
   return <MyContext.Provider value={value}>{children}</MyContext.Provider>;
 };

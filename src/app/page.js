@@ -7,6 +7,7 @@ import { Navbar } from "@/components/navbar";
 import Footer from "./home/footer";
 import Contact from "@/components/contact";
 import Features from "./home/features";
+import Gift from "./home/gift";
 
 export default function Home() {
   const { backgroundColor, color } = useAppAnimation();
@@ -16,7 +17,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Features />
-      {/* <Gift /> */}
+      <Gift />
       <Work />
       <Footer />
       <Contact />

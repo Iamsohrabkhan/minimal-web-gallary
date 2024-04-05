@@ -13,11 +13,11 @@ const Contact = () => {
       {contactActive && (
         <>
           <div
-            className="fixed inset-0  h-svh w-full z-40 bg-black/50 backdrop-blur"
+            className="fixed inset-0  h-svh w-full overflow-hidden z-40 bg-black/50 backdrop-blur"
             onClick={()=>{setContactActive(false)}}
           />
           <motion.div
-            className=" fixed z-50 top-0  w-full md:w-fit left-1/2 p-6 rounded-md shadow-xl "
+            className=" fixed z-50 top-0  w-full md:w-fit overflow-hidden left-1/2 p-6 rounded-md shadow-xl "
             style={{ x: "-50%", y: "-50%" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

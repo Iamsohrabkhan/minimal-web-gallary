@@ -42,9 +42,9 @@ const Work = () => {
   return (
     <section
       ref={workRef}
-      className="container  lg:max-w-5xl mx-auto px-6 py-24"
+      className="container  lg:max-w-5xl mx-auto px-2 lg:px-6 "
     >
-      <h2 className="text-7xl py-24">Recent Work</h2>
+      <h2 className="text-5xl lg:text-7xl py-24">Recent Work</h2>
       <div>
         <div className="relative lg:grid lg:grid-cols-2 lg:first:col-span-2  lg:[&>*:nth-child(3n+1)]:col-span-2 gap-6">
           <Card
@@ -83,8 +83,8 @@ const Card = ({ src, alt, className = "", title, year, tags }) => {
       <Image
         src={src}
         alt={alt || ""}
-        width={1200}
-        height={1200}
+        width={1800}
+        height={1800}
         className="object-contain object-center rounded-2xl"
       />
       <div className="space-y-1 my-3 space-x-3">
@@ -100,7 +100,7 @@ const Card = ({ src, alt, className = "", title, year, tags }) => {
             ))}
           </ul>
         </Button>
-        <h3 className="uppercase mt-1  text-2xl lg:text-3xl text text-balance mb-4 ">{title}</h3>
+        <h3 className="uppercase py-4  text-2xl lg:text-3xl text-balance  ">{title}</h3>
       </div>
     </motion.div>
   );

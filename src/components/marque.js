@@ -2,7 +2,8 @@
 
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
+import { useAppAnimation } from "./animations/useAnimationContext";
 
 export const Marque = ({
   items,
@@ -13,11 +14,11 @@ export const Marque = ({
 }) => {
   const containerRef = useRef(null);
   const scrollerRef = useRef(null);
+  const { marqueStart } = useAppAnimation();
 
   useEffect(() => {
     addAnimation();
   }, []);
-  const [start, setStart] = useState(false);
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
@@ -31,7 +32,7 @@ export const Marque = ({
 
       getDirection();
       getSpeed();
-      setStart(true);
+     
     }
   }
   const getDirection = () => {
@@ -72,7 +73,7 @@ export const Marque = ({
         ref={scrollerRef}
         className={cn(
           " flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap ",
-          start && "animate-scroll ",
+          marqueStart && "animate-scroll ",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
@@ -86,7 +87,7 @@ export const Marque = ({
                 src={src}
                 priority
                 alt={alt}
-                className="rounded object-cover"
+                className="rounded object-cover heroImages opacity-0"
                 fill
               />
             </li>
