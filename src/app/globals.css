@@ -10,7 +10,7 @@ body {
 
 html,
 body {
-  /* user-select: none; */
+  user-select: none;
   /* overflow-x: hidden; */
 }
 h1,

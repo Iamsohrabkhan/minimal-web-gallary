@@ -68,10 +68,11 @@ export const Navbar = () => {
                       opacity: 1,
                       transition: { duration: 0.3, delay: 0.2 },
                     }}
-                    className="cursor-pointer relative z-50"
+                    className="cursor-pointer relative z-50 "
                   >
                     Pricing
                   </motion.li>
+                  .
                   <motion.button
                     initial={{ opacity: 0 }}
                     animate={{

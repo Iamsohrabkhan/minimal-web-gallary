@@ -57,7 +57,7 @@ const Sm = () => {
           <div className="flex justify-center items-center">
             <div className="relative w-32 h-44 -rotate-12 z-10 translate-x-1/4 ">
               <Image
-                src="/givingli/happybirthdaycard.webp"
+                src="/givingli/sleek.svg"
                 fill
                 alt=""
                 className="object-cover object-center"
@@ -112,7 +112,7 @@ const Sm = () => {
           </div>
           <div className="relative w-64 h-28 ">
             <Image
-              src="/givingli/cash.svg"
+              src="/givingli/mobile.svg"
               fill
               alt=""
               className="object-center object-scale-down rounded-xl "
@@ -158,7 +158,7 @@ const Sm = () => {
             <div className="relative w-60 aspect-[2/1]">
               <Image
                 fill
-                src="/givingli/gift2.webp"
+                src="/givingli/mobile.svg"
                 alt=""
                 className="object-cover object-center rounded-2xl"
               />
@@ -234,7 +234,7 @@ const Md = () => {
 
   return (
     <div>
-      <div className="container mx-auto max-w-4xl py-12 space-y-12 px-6 hidden md:block">
+      <div className="container mx-auto max-w-4xl py-12 mt-12 space-y-12 px-6 hidden md:block">
         <h2 className="text-center text-balance leading-none text-4xl">
           Explore endless <br /> possiblities
         </h2>
@@ -250,19 +250,14 @@ const Md = () => {
             <div className="flex ">
               <div className="relative w-32 h-44 -rotate-12 z-10 translate-x-1/4 ">
                 <Image
-                  src="/givingli/happybirthdaycard.webp"
+                  src="/givingli/sleek.svg"
                   fill
                   alt=""
                   className="object-cover "
                 />
               </div>
               <div className="relative w-32 h-44 ">
-                <Image
-                  src="/givingli/yellow-icon-cerebrating.webp"
-                  fill
-                  alt=""
-                  className="object-cover "
-                />
+                
               </div>
             </div>
 
@@ -323,7 +318,7 @@ const Md = () => {
               <div className="absolute mt-3 left-1/2 -translate-x-1/2 size-44">
                 <div className="relative w-full h-full">
                   <Image
-                    src="/givingli/inbox.webp"
+                    src="/givingli/mobile.svg"
                     alt=""
                     fill
                     className="object-cover object-center"
@@ -346,7 +341,7 @@ const Md = () => {
               <div className="relative w-52 aspect-[2/1]">
                 <Image
                   fill
-                  src="/givingli/gift2.webp"
+                  src="/givingli/mobile.svg"
                   alt=""
                   className="object-cover object-center rounded-2xl"
                 />

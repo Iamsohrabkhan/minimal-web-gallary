@@ -9,7 +9,7 @@ import { stagger } from "framer-motion";
 import { HeroCtAButton, HeroInspirationButton } from "@/components/ui/HeroButton";
 
 const Hero = () => {
-  const { setContactActive, setMarqueStart } = useAppAnimation();
+  const {  setMarqueStart } = useAppAnimation();
   const [scope, animate] = useAnimate();
   useEffect(() => {
     const heroAnimation = async () => {
@@ -21,7 +21,7 @@ const Hero = () => {
       await animate(
         ".btn",
         { opacity: [0, 1], y: [10, 0] },
-        { duration: 0.1, delay: stagger(0.025) }
+        { duration: 0.1, delay: stagger(0.075) }
       );
       await animate(
         ".heroImages",
@@ -40,7 +40,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section ref={scope} className=" overflow-x-hidden">
+    <section ref={scope} className="overflow-x-hidden md:overflow-x-visible">
       <div
         className="max-h-svh relative mx-auto flex flex-col items-center gap-3 lg:gap-6 py-12 lg:py-24 
         px-12 "

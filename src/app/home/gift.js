@@ -109,7 +109,7 @@ const Gift = () => {
     <section ref={featuresRef} className="h-[300svh] w-full">
       <motion.div className=" sticky h-svh top-0 w-full left-0 py-2">
         <motion.div
-          className="text-center space-y-3 lg:p-3 -translate-y-1/2    "
+          className="text-center space-y-3 lg:p-3 -translate-y-1/2  relative z-50 "
           style={{
             position: "absolute",
             top: "50%",
@@ -123,7 +123,7 @@ const Gift = () => {
           <h3 className="leading-none text-2xl lg:text-4xl font-bold w-full">
             Discover What Sets Us Apart
           </h3>
-          <p className="text-sm lg:text-base ">
+          <p className="text-sm lg:text-lg ">
             Find out what distinguishes our services from the rest, promising a
             superior experience and results.
           </p>
@@ -133,7 +133,7 @@ const Gift = () => {
               setContactActive(true);
             }}
             style={{ color: backgroundColor, backgroundColor: color }}
-            className=" p-3 rounded-md"
+            className=" p-3 rounded-md cursor-pointer relative z-50"
           >
             Contact Us
           </motion.button>

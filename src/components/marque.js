@@ -1,8 +1,8 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
 import { useAppAnimation } from "./animations/useAnimationContext";
 
 export const Marque = ({
@@ -32,7 +32,6 @@ export const Marque = ({
 
       getDirection();
       getSpeed();
-     
     }
   }
   const getDirection = () => {

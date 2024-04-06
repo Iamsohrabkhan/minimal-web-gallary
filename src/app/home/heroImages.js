@@ -5,7 +5,7 @@ import { Marque } from "@/components/marque";
     <>
       
       <div className="rounded-md flex flex-col antialiased items-center justify-center relative
-      h-full  mb-20 z-20
+      h-full  mb-20 z-20  
       
       ">
         <Marque
