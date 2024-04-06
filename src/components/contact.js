@@ -12,17 +12,17 @@ const Contact = () => {
   
   const formik = useFormik({
     initialValues: {
-      fName: "",
-      lName: "",
+      firstname: "",
+      lastname: "",
       email: "",
       message: "",
     },
     validationSchema: Yup.object({
-      fName: Yup.string()
+      firstname: Yup.string()
         .max(20, "First name must be 20 characters or less.")
         .min(3, "First name must be more 3 characters")
         .required("First name is required"),
-      lName: Yup.string()
+        lastname: Yup.string()
         .max(20, "Last name must be 20 characters or less.")
         .min(3, "Last name must be more 3 characters"),
       email: Yup.string()
@@ -49,6 +49,7 @@ const Contact = () => {
           //   title: "SUCCESS!",
           //   description: "Message had successfuly send!"
           // })
+          
           console.log("successfully submitted form");
           resetForm();
         } else {
@@ -123,9 +124,8 @@ export const ContactElement = ({ formik }) => {
             <Input
               id="firstname"
               placeholder="Tyler"
-              type="text"
               onChange={formik.handleChange}
-              value={formik.values.fName}
+              value={formik.values.firstname}
               onBlur={formik.handleBlur}
             />
           </LabelInputContainer>
@@ -134,9 +134,8 @@ export const ContactElement = ({ formik }) => {
             <Input
               id="lastname"
               placeholder="Durden"
-              type="text"
               onChange={formik.handleChange}
-              value={formik.values.lName}
+              value={formik.values.lastname}
               onBlur={formik.handleBlur}
             />
           </LabelInputContainer>
