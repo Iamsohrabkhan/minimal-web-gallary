@@ -10,7 +10,7 @@ export const metadata = {
     twitter: {
     card: "summary_large_image",
   },
-  metadataBase: new URL("https://meganlacefield.vercel.app/"),
+  metadataBase: new URL("https://minimal-web-gallary.vercel.app/"),
 };
 
 export default function RootLayout({ children }) {
